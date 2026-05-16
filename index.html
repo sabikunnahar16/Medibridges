@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medi Bridge - Transforming Healthcare for a Better Tomorrow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="header sticky top-0 z-50 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-[#0a9b8e]">Medi Bridge</div>
+                </div>
+
+                <nav class="hidden md:flex gap-8">
+                    <a href="#home" class="hover:text-[#0a9b8e]">Home</a>
+                    <a href="#services" class="hover:text-[#0a9b8e]">Services</a>
+                    <a href="#specialists" class="hover:text-[#0a9b8e]">Specialists</a>
+                    <a href="#testimonials" class="hover:text-[#0a9b8e]">Testimonials</a>
+                    
+                </nav>
+
+                <div class="hidden md:flex gap-3">
+                    <button class="btn-outline">Login</button>
+                    <button class="btn-primary">Sign Up</button>
+                </div>
+
+                <button class="hamburger md:hidden" id="hamburgerBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <div class="mobile-nav" id="mobileNav">
+                <a href="#home" class="text-[#1a1a1a] font-medium">Home</a>
+                <a href="#services" class="text-[#1a1a1a] font-medium">Services</a>
+                <a href="#specialists" class="text-[#1a1a1a] font-medium">Specialists</a>
+                <a href="#testimonials" class="text-[#1a1a1a] font-medium">Testimonials</a>
+                <a href="#faq" class="text-[#1a1a1a] font-medium">FAQ</a>
+                <button class="btn-outline w-full">Login</button>
+                <button class="btn-primary w-full">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-12 md:pt-20 pb-12 md:pb-24 bg-gradient-to-br from-white to-[#f5f5f5]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="hero-text-section">
+                    <h1>Transforming Healthcare for a Better Tomorrow</h1>
+                    <p>Discover comprehensive healthcare solutions designed to enhance your well-being and provide access to world-class medical expertise.</p>
+
+                    <div class="flex gap-3 mt-6">
+                        <button class="btn-primary">Get Started</button>
+                        <button class="btn-outline">Learn More</button>
+                    </div>
+
+                    <div class="mt-8 flex gap-12 text-sm">
+                        <div>
+                            <p class="text-2xl font-bold text-[#0a9b8e]">500+</p>
+                            <p class="text-gray-600">Trusted Doctors</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-[#0a9b8e]">50K+</p>
+                            <p class="text-gray-600">Happy Patients</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="hidden md:block">
+                    <img src="Source/Content.png" alt="Doctor" loading="lazy" class="rounded-2xl h-96 w-full object-cover shadow-lg" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features/Specialization tags -->
+    <section class="py-8 md:py-12 bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="feature-tag">Cardiology</span>
+                <span class="feature-tag">Pediatrics</span>
+                <span class="feature-tag">Orthopedics</span>
+                <span class="feature-tag">Dermatology</span>
+                <span class="feature-tag">Neurology</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="services" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title">Experience the Difference<br>in Our Healthcare Approach</h2>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- Expert Care -->
+                <div class="service-card">
+                    <div class="icon-circle mx-auto mb-4">
+                        <span>👨‍⚕️</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Expert Care</h3>
+                    <p class="text-gray-600 text-sm">Access to highly qualified and experienced healthcare professionals.</p>
+                </div>
+
+                <!-- Personalized Approach -->
+                <div class="service-card">
+                    <div class="icon-circle mx-auto mb-4">
+                        <span>💡</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Personalized Approach</h3>
+                    <p class="text-gray-600 text-sm">Tailored treatment plans designed for your unique healthcare needs.</p>
+                </div>
+
+                <!-- Focus on Wellness -->
+                <div class="service-card">
+                    <div class="icon-circle mx-auto mb-4">
+                        <span>❤️</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Focus on Wellness</h3>
+                    <p class="text-gray-600 text-sm">Comprehensive care that prioritizes your overall health and well-being.</p>
+                </div>
+
+                <!-- Community Collaboration -->
+                <div class="service-card">
+                    <div class="icon-circle mx-auto mb-4">
+                        <span>🤝</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Community Collaboration</h3>
+                    <p class="text-gray-600 text-sm">Working together to build a healthier and stronger community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specializations Section -->
+    <section id="specialists" class="py-16 md:py-24 bg-white specialists-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 specialists-layout">
+            <div class="grid md:grid-cols-2 gap-12 items-center specialists-grid">
+                <div class="specialist-image-wrap">
+                    <div class="specialist-chip">
+                        
+                    </div>
+                    <img src="Source/Content (1).png" alt="Doctors discussing patient care" class="specialist-image" />
+                </div>
+
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4">Unveiling a Spectrum of Specialized Offerings</h2>
+                    <p class="text-gray-600 text-base leading-relaxed mb-6">Discover a tailored approach to your health with our versatile range of specialized services, ensuring every aspect of your healthcare journey is seamlessly addressed.</p>
+
+                    <div class="specialist-pill-grid">
+                        <div class="specialist-pill">
+                            <span class="specialist-pill-icon">✓</span>
+                            Diagnostic Imaging
+                        </div>
+                        <div class="specialist-pill">
+                            <span class="specialist-pill-icon">✓</span>
+                            Mental Health Services
+                        </div>
+                        <div class="specialist-pill">
+                            <span class="specialist-pill-icon">✓</span>
+                            Laboratory Services
+                        </div>
+                        <div class="specialist-pill">
+                            <span class="specialist-pill-icon">✓</span>
+                            Rehabilitation Services
+                        </div>
+                        <div class="specialist-pill">
+                            <span class="specialist-pill-icon">✓</span>
+                            Home Healthcare
+                        </div>
+                        <div class="specialist-pill">
+                            <span class="specialist-pill-icon">✓</span>
+                            Geriatric Care
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Team Section -->
+    <section class="py-16 md:py-24 bg-white team-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="section-title mb-3">Meet the Healthcare<br>Heroes Ready to Serve You</h2>
+                <p class="text-gray-500 text-sm">Discover the dedicated professionals behind our exceptional care just for you</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Doctor 1 -->
+                <div class="doctor-card">
+                   
+                    <div class="doctor-photo">
+                        <img src="Source/Avatar.png" alt="Dr. Harry Marcelo" />
+                    </div>
+                    <div class="doctor-info">
+                        <div>
+                            <h3>Dr. Harry Marcelo</h3>
+                            <p class="doctor-role">Endocrinologist</p>
+                            <p class="doctor-price">$64 <span>/ session</span></p>
+                        </div>
+                        <button class="doctor-cta">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Doctor 2 -->
+                <div class="doctor-card">
+                    
+                    <div class="doctor-photo">
+                        <img src="Source/Avatar (1).png" alt="Dr. Putri Raviola" />
+                    </div>
+                    <div class="doctor-info">
+                        <div>
+                            <h3>Dr. Putri Raviola</h3>
+                            <p class="doctor-role">Cardiologist</p>
+                            <p class="doctor-price">$72 <span>/ session</span></p>
+                        </div>
+                        <button class="doctor-cta">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Doctor 3 -->
+                <div class="doctor-card">
+               
+                    <div class="doctor-photo">
+                        <img src="Source/Avatar (2).png" alt="Dr. Niky Jeremiah" />
+                    </div>
+                    <div class="doctor-info">
+                        <div>
+                            <h3>Dr. Niky Jeremiah</h3>
+                            <p class="doctor-role">Dermatologist</p>
+                            <p class="doctor-price">$88 <span>/ session</span></p>
+                        </div>
+                        <button class="doctor-cta">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <button class="doctor-secondary">See All Doctors</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="section-title mb-3">See What Our<br>Patients Have to Say</h2>
+                <p class="text-gray-500 text-sm">Discover firsthand accounts of our patients' experiences</p>
+            </div>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-box">
+                    <p class="testimonial-quote">"Medi Bridge has been a true lifesaver for me and my family. When my father fell ill, we turned to them for help, and they exceeded our expectations in every way."</p>
+                    <div class="testimonial-person">
+                        <img src="Source/Avatar.png" alt="Mecca Rachel" />
+                        <div>
+                            <h4>Mecca Rachel</h4>
+                            <p>24 years old</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-video">
+                    <img src="Source/Testimonial Card.png" alt="Patient video" />
+                    <button class="testimonial-play">▶</button>
+                    <div class="testimonial-caption">
+                        <h4>Ninda Marsudi</h4>
+                        <p>38 years old</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-box">
+                    <p class="testimonial-quote">"I've been a patient at Medi Bridge for years, and they consistently deliver outstanding care. Their dedication to patient well-being is evident in every interaction."</p>
+                    <div class="testimonial-person">
+                        <img src="Source/Avatar (1).png" alt="Adam Ackson" />
+                        <div>
+                            <h4>Adam Ackson</h4>
+                            <p>27 years old</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <button class="doctor-secondary">See All Testimonials</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 md:py-24 bg-white faq-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="faq-layout">
+                <div class="faq-intro">
+                    <h2>Frequently<br>Asked Questions</h2>
+                    <p>Still have something to ask? Contact our sales team</p>
+                    <button class="faq-button">Contact Us</button>
+                </div>
+
+                <div class="faq-list">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item active">
+                        <button onclick="toggleFAQ(0)">
+                            <span>How do I schedule an appointment?</span>
+                            <span class="text-xl">−</span>
+                        </button>
+                        <div class="faq-content active">
+                            <p>Scheduling an appointment at Medi Bridge is easy. You can call our office directly or use our online appointment booking system on our website. Select your preferred date and time, and our staff will confirm promptly.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item">
+                        <button onclick="toggleFAQ(1)">
+                            <span>What types of healthcare services do we offer?</span>
+                            <span class="text-xl">+</span>
+                        </button>
+                        <div class="faq-content">
+                            <p>We provide comprehensive care including diagnostics, specialized clinics, surgical services, rehabilitation, and preventive programs.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item">
+                        <button onclick="toggleFAQ(2)">
+                            <span>Are walk-in appointments available?</span>
+                            <span class="text-xl">+</span>
+                        </button>
+                        <div class="faq-content">
+                            <p>Walk-in appointments are available for select services. Please call ahead to confirm availability for the day.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item">
+                        <button onclick="toggleFAQ(3)">
+                            <span>Does Medi Bridge accept insurance plans?</span>
+                            <span class="text-xl">+</span>
+                        </button>
+                        <div class="faq-content">
+                            <p>Yes, we accept most major insurance plans. Contact our billing team to verify coverage or discuss payment options.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item">
+                        <button onclick="toggleFAQ(4)">
+                            <span>What safety measures does Medi Bridge have?</span>
+                            <span class="text-xl">+</span>
+                        </button>
+                        <div class="faq-content">
+                            <p>We follow strict infection control protocols and maintain state-of-the-art equipment to ensure patient safety.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="cta-panel">
+                <span class="cta-shape cta-shape-left"></span>
+                <span class="cta-shape cta-shape-right"></span>
+                <h2>Discover Comprehensive<br>Care Tailored to Your Needs</h2>
+                <p>Experience personalized healthcare solutions designed to prioritize your well-being</p>
+                <button class="cta-button">Make an Appointment</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="footer-columns">
+                <div>
+                    <h4 class="footer-brand">Medi Bridge</h4>
+                    <p class="footer-tagline">Empowering Health, Inspiring Lives.</p>
+                </div>
+
+                <div>
+                    <h5 class="footer-title">Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Doctors</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="footer-title">Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Clinics</a></li>
+                        <li><a href="#">Healthcare</a></li>
+                        <li><a href="#">Training Center</a></li>
+                        <li><a href="#">Online Consultation</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="footer-title">Social Media</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© Copyright Medi Bridge 2024</p>
+                <div class="footer-bottom-links">
+                    <a href="#">FAQ</a>
+                    <a href="#">Terms of Condition</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Changelog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileNav = document.getElementById('mobileNav');
+
+        hamburgerBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = mobileNav.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+            });
+        });
+
+        // FAQ toggle functionality
+        function toggleFAQ(index) {
+            const faqItems = document.querySelectorAll('.faq-item');
+            const currentItem = faqItems[index];
+            const content = currentItem.querySelector('.faq-content');
+            const button = currentItem.querySelector('button');
+
+            // Close all other items
+            faqItems.forEach((item, i) => {
+                if (i !== index) {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-content').classList.remove('active');
+                    item.querySelector('button span:last-child').textContent = '+';
+                }
+            });
+
+            // Toggle current item
+            currentItem.classList.toggle('active');
+            content.classList.toggle('active');
+            button.querySelector('span:last-child').textContent = content.classList.contains('active') ? '−' : '+';
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
