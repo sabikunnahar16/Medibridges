@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Assignment | Medi Bridge Academy</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--ink: #111413;
+			--muted: #5b6562;
+			--mint: #0a7d6f;
+			--mint-dark: #085d53;
+			--sun: #f2c94c;
+			--cloud: #f7f6f1;
+			--card: #ffffff;
+			--stroke: #e7e2da;
+			--berry: #d9583b;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0;
+			font-family: "Space Grotesk", "Segoe UI", sans-serif;
+			color: var(--ink);
+			background: radial-gradient(circle at 10% 10%, rgba(10, 125, 111, 0.12), transparent 40%),
+				radial-gradient(circle at 85% 15%, rgba(242, 201, 76, 0.16), transparent 35%),
+				linear-gradient(180deg, #fffdf7 0%, #f6f5f1 100%);
+		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		.page {
+			min-height: 100vh;
+			padding-bottom: 56px;
+		}
+
+		.container {
+			width: min(1120px, 92vw);
+			margin: 0 auto;
+		}
+
+		header {
+			position: sticky;
+			top: 0;
+			z-index: 10;
+			backdrop-filter: blur(12px);
+			background: rgba(255, 253, 247, 0.88);
+			border-bottom: 1px solid rgba(231, 226, 218, 0.8);
+		}
+
+		.header-wrap {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 18px 0;
+		}
+
+		.brand {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			font-weight: 700;
+			letter-spacing: 0.5px;
+		}
+
+		.brand-mark {
+			width: 36px;
+			height: 36px;
+			border-radius: 10px;
+			background: linear-gradient(140deg, var(--mint), var(--mint-dark));
+			position: relative;
+		}
+
+		.brand-mark::after {
+			content: "";
+			position: absolute;
+			width: 14px;
+			height: 14px;
+			border-radius: 50%;
+			background: var(--sun);
+			right: 6px;
+			top: 6px;
+		}
+
+		.nav {
+			display: flex;
+			gap: 20px;
+			font-size: 14px;
+			font-weight: 500;
+			color: var(--muted);
+		}
+
+		.nav a:hover {
+			color: var(--mint);
+		}
+
+		.header-actions {
+			display: flex;
+			gap: 12px;
+		}
+
+		.btn {
+			border-radius: 999px;
+			padding: 10px 18px;
+			border: 1px solid var(--ink);
+			font-size: 13px;
+			font-weight: 600;
+			background: transparent;
+			cursor: pointer;
+		}
+
+		.btn-primary {
+			background: var(--ink);
+			color: white;
+			border-color: var(--ink);
+		}
+
+		.btn-accent {
+			background: var(--mint);
+			color: white;
+			border-color: var(--mint);
+		}
+
+		.hero {
+			padding: 36px 0 20px;
+		}
+
+		.hero-grid {
+			display: grid;
+			grid-template-columns: 1.2fr 0.8fr;
+			gap: 28px;
+			align-items: stretch;
+		}
+
+		.hero-card {
+			background: var(--card);
+			border-radius: 24px;
+			padding: 28px 32px;
+			border: 1px solid var(--stroke);
+			box-shadow: 0 20px 40px rgba(17, 20, 19, 0.08);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.hero-card::after {
+			content: "";
+			position: absolute;
+			width: 160px;
+			height: 160px;
+			background: rgba(10, 125, 111, 0.08);
+			border-radius: 50%;
+			right: -40px;
+			top: -40px;
+		}
+
+		.hero-title {
+			font-family: "DM Serif Display", "Times New Roman", serif;
+			font-size: 40px;
+			margin: 0 0 12px;
+		}
+
+		.hero-subtitle {
+			color: var(--muted);
+			margin: 0 0 22px;
+			line-height: 1.6;
+		}
+
+		.meta-row {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 16px;
+		}
+
+		.meta-pill {
+			background: var(--cloud);
+			border-radius: 999px;
+			padding: 8px 14px;
+			font-size: 12px;
+			font-weight: 600;
+			color: var(--muted);
+			border: 1px solid var(--stroke);
+		}
+
+		.hero-actions {
+			margin-top: 22px;
+			display: flex;
+			gap: 12px;
+			flex-wrap: wrap;
+		}
+
+		.status-card {
+			background: linear-gradient(160deg, rgba(10, 125, 111, 0.95), rgba(8, 93, 83, 1));
+			color: white;
+			border-radius: 24px;
+			padding: 24px;
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.status-card::before {
+			content: "";
+			position: absolute;
+			width: 140px;
+			height: 140px;
+			background: rgba(242, 201, 76, 0.2);
+			border-radius: 50%;
+			right: -40px;
+			bottom: -60px;
+		}
+
+		.status-label {
+			font-size: 12px;
+			text-transform: uppercase;
+			letter-spacing: 1.6px;
+			opacity: 0.7;
+		}
+
+		.status-title {
+			font-size: 24px;
+			font-weight: 600;
+			margin: 0;
+		}
+
+		.status-progress {
+			background: rgba(255, 255, 255, 0.18);
+			border-radius: 999px;
+			height: 10px;
+			overflow: hidden;
+		}
+
+		.status-progress span {
+			display: block;
+			height: 100%;
+			width: 72%;
+			background: var(--sun);
+		}
+
+		.status-foot {
+			font-size: 13px;
+			opacity: 0.85;
+		}
+
+		.main {
+			display: grid;
+			grid-template-columns: 1.6fr 1fr;
+			gap: 28px;
+			margin-top: 26px;
+		}
+
+		.card {
+			background: var(--card);
+			border-radius: 20px;
+			padding: 22px 24px;
+			border: 1px solid var(--stroke);
+			box-shadow: 0 12px 30px rgba(17, 20, 19, 0.05);
+		}
+
+		.card + .card {
+			margin-top: 20px;
+		}
+
+		.card-title {
+			font-size: 18px;
+			margin: 0 0 12px;
+		}
+
+		.bullet-list {
+			display: grid;
+			gap: 10px;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			color: var(--muted);
+			font-size: 14px;
+		}
+
+		.bullet-list li {
+			display: flex;
+			gap: 10px;
+			align-items: flex-start;
+		}
+
+		.bullet-dot {
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: var(--mint);
+			margin-top: 6px;
+		}
+
+		.timeline {
+			display: grid;
+			gap: 16px;
+			margin-top: 16px;
+		}
+
+		.timeline-item {
+			display: grid;
+			grid-template-columns: 18px 1fr;
+			gap: 12px;
+			align-items: start;
+		}
+
+		.timeline-line {
+			position: relative;
+			width: 10px;
+			height: 100%;
+		}
+
+		.timeline-line::before {
+			content: "";
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			background: var(--mint);
+			border-radius: 50%;
+			top: 4px;
+			left: 0;
+		}
+
+		.timeline-line::after {
+			content: "";
+			position: absolute;
+			width: 2px;
+			height: calc(100% - 10px);
+			background: var(--stroke);
+			top: 16px;
+			left: 4px;
+		}
+
+		.timeline-item:last-child .timeline-line::after {
+			display: none;
+		}
+
+		.timeline-item h4 {
+			margin: 0 0 6px;
+			font-size: 15px;
+		}
+
+		.timeline-item p {
+			margin: 0;
+			color: var(--muted);
+			font-size: 13px;
+		}
+
+		.rubric-table {
+			width: 100%;
+			border-collapse: collapse;
+			font-size: 13px;
+		}
+
+		.rubric-table th,
+		.rubric-table td {
+			padding: 10px 8px;
+			text-align: left;
+			border-bottom: 1px solid var(--stroke);
+		}
+
+		.rubric-table th {
+			color: var(--muted);
+			font-weight: 600;
+			font-size: 12px;
+			text-transform: uppercase;
+			letter-spacing: 0.7px;
+		}
+
+		.tag-row {
+			display: flex;
+			gap: 8px;
+			flex-wrap: wrap;
+		}
+
+		.tag {
+			background: rgba(217, 88, 59, 0.12);
+			color: var(--berry);
+			border-radius: 999px;
+			padding: 6px 12px;
+			font-size: 12px;
+			font-weight: 600;
+		}
+
+		.resource-list {
+			display: grid;
+			gap: 10px;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			font-size: 14px;
+			color: var(--muted);
+		}
+
+		.resource-item {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border: 1px dashed var(--stroke);
+			border-radius: 12px;
+			padding: 10px 12px;
+		}
+
+		.resource-item span {
+			font-weight: 600;
+			color: var(--ink);
+		}
+
+		.checklist {
+			display: grid;
+			gap: 12px;
+		}
+
+		.check-item {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			font-size: 14px;
+			color: var(--muted);
+		}
+
+		.check-mark {
+			width: 18px;
+			height: 18px;
+			border-radius: 6px;
+			border: 2px solid var(--mint);
+			position: relative;
+		}
+
+		.check-mark.filled {
+			background: var(--mint);
+		}
+
+		.check-mark.filled::after {
+			content: "";
+			position: absolute;
+			width: 8px;
+			height: 4px;
+			border-left: 2px solid white;
+			border-bottom: 2px solid white;
+			transform: rotate(-45deg);
+			left: 3px;
+			top: 4px;
+		}
+
+		.submission {
+			background: var(--cloud);
+			border-radius: 16px;
+			padding: 16px;
+			display: grid;
+			gap: 12px;
+		}
+
+		.submission textarea {
+			width: 100%;
+			min-height: 110px;
+			border-radius: 12px;
+			border: 1px solid var(--stroke);
+			padding: 12px;
+			font-family: inherit;
+			font-size: 13px;
+			resize: vertical;
+		}
+
+		.footer {
+			margin-top: 40px;
+			color: var(--muted);
+			font-size: 12px;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: 10px;
+		}
+
+		.reveal {
+			animation: fadeUp 0.7s ease both;
+		}
+
+		@keyframes fadeUp {
+			from {
+				opacity: 0;
+				transform: translateY(18px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		@media (max-width: 980px) {
+			.hero-grid,
+			.main {
+				grid-template-columns: 1fr;
+			}
+
+			.nav {
+				display: none;
+			}
+
+			.header-actions {
+				display: none;
+			}
+		}
+
+		@media (max-width: 640px) {
+			.hero-title {
+				font-size: 32px;
+			}
+
+			.hero-card {
+				padding: 22px;
+			}
+
+			.status-card {
+				padding: 20px;
+			}
+
+			.footer {
+				flex-direction: column;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<header>
+			<div class="container header-wrap">
+				<div class="brand">
+					<span class="brand-mark" aria-hidden="true"></span>
+					<span>Medi Bridge Academy</span>
+				</div>
+				<nav class="nav">
+					<a href="#overview">Overview</a>
+					<a href="#milestones">Milestones</a>
+					<a href="#rubric">Rubric</a>
+					<a href="#submit">Submit</a>
+				</nav>
+				<div class="header-actions">
+					<button class="btn">Ask Mentor</button>
+					<button class="btn btn-primary">Download Brief</button>
+				</div>
+			</div>
+		</header>
+
+		<section class="hero">
+			<div class="container hero-grid">
+				<div class="hero-card reveal">
+					<p class="status-label">Assignment</p>
+					<h1 class="hero-title">Redesign the patient check-in flow</h1>
+					<p class="hero-subtitle">Map a frictionless intake experience for a community clinic. Deliver a low-fidelity prototype, a decision rationale, and a short usability test plan.</p>
+					<div class="meta-row">
+						<span class="meta-pill">Course: Service Design 204</span>
+						<span class="meta-pill">Due: May 24, 2026</span>
+						<span class="meta-pill">Team: 3 learners</span>
+					</div>
+					<div class="hero-actions">
+						<button class="btn btn-accent">Submit Draft</button>
+						<button class="btn">View Example</button>
+					</div>
+				</div>
+				<div class="status-card reveal">
+					<p class="status-label">Status</p>
+					<h2 class="status-title">In Progress</h2>
+					<div class="status-progress"><span></span></div>
+					<p class="status-foot">72% complete. Next checkpoint: stakeholder map.</p>
+					<div class="tag-row">
+						<span class="tag">Peer Review</span>
+						<span class="tag">Prototype</span>
+						<span class="tag">Research</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="overview" class="container main">
+			<div>
+				<div class="card reveal">
+					<h3 class="card-title">Assignment brief</h3>
+					<ul class="bullet-list">
+						<li><span class="bullet-dot" aria-hidden="true"></span>Audit the current intake journey and identify three friction points.</li>
+						<li><span class="bullet-dot" aria-hidden="true"></span>Sketch a new flow that reduces wait time by at least 30 percent.</li>
+						<li><span class="bullet-dot" aria-hidden="true"></span>Prototype key screens in Figma (mobile + desktop kiosk).</li>
+						<li><span class="bullet-dot" aria-hidden="true"></span>Write a decision log (300 to 500 words) explaining the choices.</li>
+					</ul>
+				</div>
+
+				<div id="milestones" class="card reveal">
+					<h3 class="card-title">Milestones</h3>
+					<div class="timeline">
+						<div class="timeline-item">
+							<div class="timeline-line"></div>
+							<div>
+								<h4>Discovery sprint</h4>
+								<p>Interview two clinic staff and capture operational constraints.</p>
+							</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-line"></div>
+							<div>
+								<h4>Flow redesign</h4>
+								<p>Create a service blueprint and revised intake map.</p>
+							</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-line"></div>
+							<div>
+								<h4>Prototype + test</h4>
+								<p>Validate with three users, iterate, and finalize.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="rubric" class="card reveal">
+					<h3 class="card-title">Rubric overview</h3>
+					<table class="rubric-table">
+						<thead>
+							<tr>
+								<th>Criteria</th>
+								<th>Weight</th>
+								<th>Target</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Research synthesis</td>
+								<td>25%</td>
+								<td>Clear insights, evidence-backed</td>
+							</tr>
+							<tr>
+								<td>Flow clarity</td>
+								<td>30%</td>
+								<td>Logical, low friction, accessible</td>
+							</tr>
+							<tr>
+								<td>Prototype quality</td>
+								<td>25%</td>
+								<td>Interactive, complete states</td>
+							</tr>
+							<tr>
+								<td>Decision log</td>
+								<td>20%</td>
+								<td>Concise, aligned with research</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<aside>
+				<div class="card reveal">
+					<h3 class="card-title">Checklist</h3>
+					<div class="checklist">
+						<div class="check-item"><span class="check-mark filled"></span>Stakeholder map drafted</div>
+						<div class="check-item"><span class="check-mark filled"></span>Current flow documented</div>
+						<div class="check-item"><span class="check-mark"></span>Prototype built</div>
+						<div class="check-item"><span class="check-mark"></span>Usability plan written</div>
+					</div>
+				</div>
+
+				<div class="card reveal">
+					<h3 class="card-title">Resources</h3>
+					<ul class="resource-list">
+						<li class="resource-item"><span>Flow template</span><span>PDF</span></li>
+						<li class="resource-item"><span>Persona deck</span><span>Slides</span></li>
+						<li class="resource-item"><span>Prototype kit</span><span>Figma</span></li>
+					</ul>
+				</div>
+
+				<div id="submit" class="card reveal">
+					<h3 class="card-title">Submission</h3>
+					<div class="submission">
+						<div class="meta-pill" style="width: fit-content;">Upload deadline: May 24, 11:59 PM</div>
+						<textarea placeholder="Leave a note for your mentor..."></textarea>
+						<button class="btn btn-primary">Upload Files</button>
+					</div>
+				</div>
+
+				<div class="card reveal">
+					<h3 class="card-title">Instructor note</h3>
+					<p class="hero-subtitle" style="margin: 0;">Focus on empathy. Showcase how the redesigned flow reduces stress for elderly patients and front desk staff.</p>
+				</div>
+			</aside>
+		</section>
+
+		<footer class="container footer">
+			<span>Need help? Book a mentor session.</span>
+			<span>Version 1.2 · Updated May 16, 2026</span>
+		</footer>
+	</div>
+</body>
+</html>
